@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Edit Trip {% endblock %}
+
+{% block body %}
+
+    {{  parent() }}
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Trips</h4>
+                </div>
+            </div>
+
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index_page') }}"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li><a href="{{ path('index_admins_page') }}">Trips</a></li>
+                    <li class="active">Edit Trip</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page header -->
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Horizontal form -->
+            <div class="panel panel-flat">
+
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        {{ form(form) }}
+                    </div>
+                </div>
+            </div>
+            <!-- /horizotal form -->
+
+
+        </div>
+        <!-- /content area -->
+
+    </div>
+    <!-- /main content -->
+    </div>
+    <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+{% endblock %}

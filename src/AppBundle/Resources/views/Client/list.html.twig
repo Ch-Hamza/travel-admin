@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Clients {% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Clients</span> - List</h4>
+                </div>
+            </div>
+
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index_page') }}"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li class="active">Clients</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page header -->
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Table -->
+            <div class="panel panel-flat">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            <th>Country</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for client in listUsers %}
+                            <tr>
+                                <td>{{ client.nom }}</td>
+                                <td>{{ client.prenom }}</td>
+                                <td>{{ client.email }}</td>
+                                <td>{{ client.dateNaissance | date('Y-m-d') }}</td>
+                                <td>{{ client.pays }}</td>
+                                <td>
+                                    {% if client.enabled %}
+                                        <span class="label bg-success-400">Enabled</span>
+                                    {% else %}
+                                        <span class="label bg-danger-400">Banned</span>
+                                    {% endif %}
+                                </td>
+
+                                <td>
+                                    <ul class="icons-list mt-15">
+                                        <li><a href="{{ path('enable_client_page', {'id': client.id}) }}" data-popup="tooltip" title="Ban"><i class="icon-checkmark"></i></a></li>
+                                        <li><a href="{{ path('delete_client_page', {'id': client.id}) }}" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Client?')"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /table -->
+
+
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /main content -->
+
+</div>
+<!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+{% endblock %}

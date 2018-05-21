@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Trips {% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Trips</span> - List</h4>
+                </div>
+            </div>
+
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index_page') }}"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li class="active">Trips</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page header -->
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Table -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <div class="row">
+                        {% if(app.request.attributes.get('_route')=="index_trips_page") %}
+                            <a href="{{ path('add_trip_page') }}" class="btn btn-success"><i class="icon-plus3 position-left"></i>Add Trip</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Created by</th>
+                            <th>Departure</th>
+                            <th>Arrival</th>
+                            <th>Number of places</th>
+                            <th>Number of reservations</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Featured</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for trip in listTrips %}
+                            <tr>
+                                <td>{{ trip.titre }}</td>
+                                <td>{{ trip.user.nom }} {{ trip.user.prenom }}</td>
+                                <td>{{ trip.dateDepart | date('Y-m-d') }}</td>
+                                <td>{{ trip.dateRetour | date('Y-m-d') }}</td>
+                                <td>{{ trip.nbrPersonne }}</td>
+                                <td>{{ trip.nbrReservation }}</td>
+                                <td>{{ trip.categorie }}</td>
+                                <td>{{ trip.prix }}</td>
+                                <td>
+                                    {% if trip.statut %}
+                                        <span class="label bg-success-400">Enabled</span>
+                                    {% else %}
+                                        <span class="label bg-danger-400">Disabled</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if trip.featured %}
+                                        <span class="label bg-success-400">true</span>
+                                    {% else %}
+                                        <span class="label bg-warning-400">false</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <ul class="icons-list mt-15">
+                                        <li><a href="{{ path('feature_trip_page', {'id': trip.id}) }}" data-popup="tooltip" title="Featured"><i class=" icon-star-full2"></i></a></li>
+                                        <li><a href="{{ path('enable_trip_page', {'id': trip.id}) }}" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                        <li><a href="{{ path('edit_trip_page', {'id': trip.id}) }}" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                        <li><a href="{{ path('delete_trip_page', {'id': trip.id}) }}" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Trip?')"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /table -->
+
+
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /main content -->
+
+</div>
+<!-- /page content -->
+
+</div>
+<!-- /page container -->
+
+{% endblock %}
