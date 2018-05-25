@@ -112,6 +112,18 @@
                                 <a href="{{ path('index_trips_page') }}"><i class="icon-camera"></i> <span>Trips</span></a>
                             </li>
 
+                            <li {% if app.request.attributes.get('_route') == 'index_reservation_page' %} class="active"{% endif %}>
+                                <a href="{{ path('index_reservation_page') }}"><i class=" icon-bookmark4"></i> <span>Reservations</span></a>
+                            </li>
+
+                            <li {% if app.request.attributes.get('_route') == 'index_blog_page' %} class="active"{% endif %}>
+                                <a href="{{ path('index_blog_page') }}"><i class="icon-file-text"></i> <span>Blog</span></a>
+                            </li>
+
+                            <li {% if app.request.attributes.get('_route') == 'index_comments_page' %} class="active"{% endif %}>
+                                <a href="{{ path('index_comments_page') }}"><i class="icon-bubble9"></i> <span>Comments</span></a>
+                            </li>
+
                             <li {% if app.request.attributes.get('_route') == 'index_clients_page' %} class="active"{% endif %}>
                                 <a href="{{ path('index_clients_page') }}"><i class="icon-user"></i> <span>Clients</span></a>
                             </li>

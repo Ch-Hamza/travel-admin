@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Reservation {% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Reservation</span> - List</h4>
+                </div>
+            </div>
+
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index_page') }}"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li class="active">Reservation</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page header -->
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Table -->
+            <div class="panel panel-flat">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <th>Reservation id</th>
+                        <th>Trip id</th>
+                        <th>email</th>
+                        <th>Nombre Adultes</th>
+                        <th>Nombre Enfants</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                        <thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>utilisateur@gmail.com</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>marielepen@gmail.com</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>ghassen@gmail.com</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>attrative@gmail.com</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>justin@gmail.com</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>nicolas@gmail.com</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td><span class="label bg-success-400">Enabled</span></td>
+                            <td>
+                                <ul class="icons-list mt-15">
+                                    <li><a href="" data-popup="tooltip" title="Toggle"><i class="icon-checkmark"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                    <li><a href="" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this Blog?')"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /table -->
+
+
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+{% endblock %}

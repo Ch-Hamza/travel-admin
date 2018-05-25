@@ -20,6 +20,30 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/reservation", name="index_reservation_page")
+     */
+    public function reservationAction()
+    {
+        return $this->render('AppBundle::reservation.html.twig');
+    }
+
+    /**
+     * @Route("/blog", name="index_blog_page")
+     */
+    public function blogAction()
+    {
+        return $this->render('AppBundle::blog.html.twig');
+    }
+
+    /**
+     * @Route("/comments", name="index_comments_page")
+     */
+    public function commentsAction()
+    {
+        return $this->render('AppBundle::comment.html.twig');
+    }
+
+    /**
      * @Route("/trips", name="index_trips_page")
      */
     public function indexAction()
