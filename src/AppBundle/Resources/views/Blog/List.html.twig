@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - List Blog {% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Blog</span> - List</h4>
+                </div>
+            </div>
+
+            <div class="breadcrumb-line">
+                <ul class="breadcrumb">
+                    <li><a href="{{ path('index_page') }}"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li class="active">Blog</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page header -->
+
+        <!-- Content area -->
+        <div class="content">
+
+            <!-- Table -->
+            <div class="panel panel-flat">
+                <div class="panel-heading">
+                    <div class="row">
+                        {% if(app.request.attributes.get('_route')=="index_blog_page") %}
+                            <a href="{{ path('add_blog_page')}}" class="btn btn-success"><i class="icon-plus3 position-left"></i>Add Blog</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Blog ID</th>
+                            <th>Titre</th>
+                            <th>Contenue</th>
+                            <th>Date</th>
+                            <th>image</th>
+                            <th>cover image</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for blog in list %}
+                            <tr>
+                                <td>{{ blog.id }}</td>
+                                <td>{{ blog.titre }}</td>
+                                <td>{{ blog.content }}</td>
+                                <td>{{ blog.date | date('Y-m-d')  }}</td>
+                                <td><img src="{{ vich_uploader_asset(blog,'imageFile') }}" alt="" style="width: 150px;height: 75px;object-fit: cover;"></td>
+                                <td><img src="{{ vich_uploader_asset(blog,'imageFile1') }}" alt="" style="width: 150px;height: 75px;object-fit: cover;"></td>
+                                <td>
+                                    <ul class="icons-list mt-15">
+                                        <li><a href="{{ path('edit_blog_page', {'id': blog.id}) }}" data-popup="tooltip" title="Edit"><i class="icon-pencil5"></i></a></li>
+                                        <li><a href="{{ path('delete_blog_page', {'id': blog.id}) }}" data-popup="tooltip" title="Delete"><i class="icon-trash" onclick="return confirm('Are you sure you want to Delete this blog?')"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- /table -->
+
+
+        </div>
+        <!-- /content area -->
+    </div>
+    <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+{% endblock %}

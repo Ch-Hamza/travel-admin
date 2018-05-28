@@ -5,11 +5,9 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpFoundation\Request;
+
 use UserBundle\Entity\Client;
-use UserBundle\Entity\User;
-use UserBundle\Form\EditUserType;
-use UserBundle\Form\UserType;
+
 
 class ClientController extends Controller
 {
