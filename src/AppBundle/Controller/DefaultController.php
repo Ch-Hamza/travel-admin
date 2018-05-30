@@ -78,7 +78,7 @@ class DefaultController extends Controller
         if($request->isMethod('POST') && $form->handleRequest($request)->isValid())
         {
             $em->flush();
-            return $this->redirectToRoute('index_trip_page');
+            return $this->redirectToRoute('index_trips_page');
         }
 
         return $this->render('AppBundle::edit.html.twig', array(
@@ -97,10 +97,13 @@ class DefaultController extends Controller
         {
             throw new NotFoundHttpException('Trip with id: '.$id." doesn't exist");
         }
+        foreach ($trip->getReservations() as $reservation){
+            $reservation->remove();
+        }
         $em->remove($trip);
         $em->flush();
 
-        return $this->redirectToRoute('index_page');
+        return $this->redirectToRoute('index_trips_page');
     }
 
     /**

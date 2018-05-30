@@ -387,30 +387,4 @@ class Client
     {
         return $this->codePays;
     }
-
-    /**
-     * Add trip.
-     *
-     * @param \AppBundle\Entity\Trip $trip
-     *
-     * @return Client
-     */
-    public function addTrip(\AppBundle\Entity\Trip $trip)
-    {
-        $this->trips[] = $trip;
-
-        return $this;
-    }
-
-    /**
-     * Remove trip.
-     *
-     * @param \AppBundle\Entity\Trip $trip
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeTrip(\AppBundle\Entity\Trip $trip)
-    {
-        return $this->trips->removeElement($trip);
-    }
 }

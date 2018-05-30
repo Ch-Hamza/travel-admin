@@ -22,7 +22,7 @@ class Reservation
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Trip", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Trip")
      */
     private $trip;
 

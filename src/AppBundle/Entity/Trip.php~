@@ -133,6 +133,33 @@ class Trip
      */
     private $user;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reservation")
+     */
+    private $reservations;
+
+    public function __construct()
+    {
+        $this->reservations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReservations()
+    {
+        return $this->reservations;
+    }
+
+    /**
+     * @param mixed $reservations
+     */
+    public function setReservations($reservations)
+    {
+        $this->reservations = $reservations;
+    }
+
+
 
     /**
      * Get id.

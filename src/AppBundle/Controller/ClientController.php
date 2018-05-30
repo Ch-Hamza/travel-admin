@@ -38,10 +38,17 @@ class ClientController extends Controller
         {
             throw new NotFoundHttpException('Client with id: '.$id." doesn't exist");
         }
+        foreach ($client.getTrips() as $trip)
+        {
+            foreach ($trip->getReservations() as $reservation){
+                $em->remove($reservation);
+            }
+            $trip->remove($trip);
+        }
         $em->remove($client);
         $em->flush();
 
-        return $this->redirectToRoute('index_page');
+        return $this->redirectToRoute('index_clients_page');
     }
 
     /**
