@@ -45,10 +45,11 @@ class DefaultController extends Controller
 
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
 
-            $user= $this->get('security.context')->getToken()->getUser();
+            $user= $this->getUser();
             $trip->setCreePar($user->getEmail());
             $trip->setStatut(false);
             $trip->setFeatured(false);
+            $trip->setNbrReservation(0);
             $trip->setUser($user);
 
             $em = $this->getDoctrine()->getManager();
@@ -98,7 +99,7 @@ class DefaultController extends Controller
             throw new NotFoundHttpException('Trip with id: '.$id." doesn't exist");
         }
         foreach ($trip->getReservations() as $reservation){
-            $reservation->remove();
+            $em->remove($reservation);
         }
         $em->remove($trip);
         $em->flush();

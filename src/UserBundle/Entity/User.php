@@ -30,12 +30,12 @@ class User extends \FOS\UserBundle\Model\User
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $firstname;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $lastname;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -66,33 +66,33 @@ class User extends \FOS\UserBundle\Model\User
     /**
      * @return mixed
      */
-    public function getFirstname()
+    public function getPrenom()
     {
-        return $this->firstname;
+        return $this->prenom;
     }
 
     /**
-     * @param mixed $firstname
+     * @param mixed $prenom
      */
-    public function setFirstname($firstname)
+    public function setPrenom($prenom)
     {
-        $this->firstname = $firstname;
+        $this->prenom = $prenom;
     }
 
     /**
      * @return mixed
      */
-    public function getLastname()
+    public function getNom()
     {
-        return $this->lastname;
+        return $this->nom;
     }
 
     /**
-     * @param mixed $lastname
+     * @param mixed $nom
      */
-    public function setLastname($lastname)
+    public function setNom($nom)
     {
-        $this->lastname = $lastname;
+        $this->nom = $nom;
     }
 
     public function setImageFile(File $image = null)

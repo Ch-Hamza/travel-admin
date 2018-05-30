@@ -53,8 +53,8 @@
                         <tbody>
                         {% for user in listUsers %}
                             <tr>
-                                <td>{{ user.firstname }}</td>
-                                <td>{{ user.username }}</td>
+                                <td>{{ user.prenom }}</td>
+                                <td>{{ user.nom }}</td>
                                 <td>{{ user.email }}</td>
                                 <td>
                                     {% if user.enabled %}

@@ -37,18 +37,18 @@
                         {{ form_errors(form) }}
 
                         <div class="form-group">
-                            {{ form_label(form.firstname, "Firstname", {'label_attr': {'class': 'control-label col-lg-2'}}) }}
-                            {{ form_errors(form.firstname) }}
+                            {{ form_label(form.prenom, "Firstname", {'label_attr': {'class': 'control-label col-lg-2'}}) }}
+                            {{ form_errors(form.prenom) }}
                             <div class="col-lg-10">
-                                {{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
 
                         <div class="form-group">
-                            {{ form_label(form.lastname, "Lastname", {'label_attr': {'class': 'control-label col-lg-2'}}) }}
-                            {{ form_errors(form.lastname) }}
+                            {{ form_label(form.nom, "Lastname", {'label_attr': {'class': 'control-label col-lg-2'}}) }}
+                            {{ form_errors(form.nom) }}
                             <div class="col-lg-10">
-                                {{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
 

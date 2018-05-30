@@ -38,9 +38,9 @@
                         </div>
 
                         <div class="panel-body">
-                        	<h6><span class="text-semibold"><i class="icon-user"></i>  Full Name : {{ user.firstname }} {{ user.lastname }}</h4>
-                            <h6><span class="text-semibold"><i class="icon-user-check"></i>  Username : {{ user.username }}</h4>
-                            <h6><span class="text-semibold"><i class="icon-envelop3"></i>  Email : {{ user.email }}</h4>
+                        	<h6><span class="text-semibold"><i class="icon-user"></i>  Full Name : {{ user.prenom }} {{ user.nom }}</h6>
+                            <h6><span class="text-semibold"><i class="icon-user-check"></i>  Username : {{ user.username }}</h6>
+                            <h6><span class="text-semibold"><i class="icon-envelop3"></i>  Email : {{ user.email }}</h6>
                         </div>
                     </div>
                     <!-- /simple panel -->
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="caption text-center">
-                            <h6 class="text-semibold no-margin">{{ user.firstname }} {{ user.lastname }}
+                            <h6 class="text-semibold no-margin">{{ user.prenom }} {{ user.nom }}
                                 <small class="display-block">
                                     {% if(app.user.roles[0]=="ROLE_ADMIN") %}
                                         Administrator

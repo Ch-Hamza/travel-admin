@@ -61,7 +61,7 @@ class Trip
     /**
      * @var int
      *
-     * @ORM\Column(name="nbr_reservation", type="integer")
+     * @ORM\Column(name="nbr_reservation", type="integer", nullable=true)
      */
     private $nbrReservation;
 
@@ -75,7 +75,7 @@ class Trip
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
 
@@ -129,12 +129,12 @@ class Trip
     private $featured;
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Client")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Reservation")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="trip")
      */
     private $reservations;
 

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\File\File;
  *
  * @ORM\Table(name="blog_post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
- * * @Vich\Uploadable
+ * @Vich\Uploadable
  */
 class Blog
 {
@@ -34,7 +34,7 @@ class Blog
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=10000,  nullable=true)
+     * @ORM\Column(name="image", type="string", length=255,  nullable=true)
      */
     private $image;
 
@@ -105,7 +105,7 @@ class Blog
     /**
      * @var string
      *
-     * @ORM\Column(name="image_cover", type="string", length=10000,  nullable=true)
+     * @ORM\Column(name="image_cover", type="string", length=255,  nullable=true)
      */
     private $imageCover;
 

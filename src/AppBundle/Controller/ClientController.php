@@ -38,12 +38,12 @@ class ClientController extends Controller
         {
             throw new NotFoundHttpException('Client with id: '.$id." doesn't exist");
         }
-        foreach ($client.getTrips() as $trip)
+        foreach ($client->getTrips() as $trip)
         {
             foreach ($trip->getReservations() as $reservation){
                 $em->remove($reservation);
             }
-            $trip->remove($trip);
+            $em->remove($trip);
         }
         $em->remove($client);
         $em->flush();

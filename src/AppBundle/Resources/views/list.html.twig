@@ -60,7 +60,7 @@
                         {% for trip in listTrips %}
                             <tr>
                                 <td>{{ trip.titre }}</td>
-                                <td>{{ trip.user.nom }} {{ trip.user.prenom }}</td>
+                                <td>{{ trip.creePar }}</td>
                                 <td>{{ trip.dateDepart | date('Y-m-d') }}</td>
                                 <td>{{ trip.dateRetour | date('Y-m-d') }}</td>
                                 <td>{{ trip.nbrPersonne }}</td>
